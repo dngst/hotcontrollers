@@ -1,0 +1,38 @@
+<% flash.each do |flash_type, message| %>
+  <div
+    class="py-2 px-3 mb-2
+           <%= flash_type == 'alert' ? 'bg-red-100 text-red-500' : 'bg-green-100 text-green-500' %>
+           font-medium rounded-lg inline-block"
+    data-controller="auto-remove-message">
+    <%= message %>
+  </div>
+<% end %>
+
+<%# app/views/layouts/application.html.erb
+
+<div class="flash">
+  <%= render "layouts/flash" %>
+</div> %>
+
+<%# @keyframes appear-then-fade {
+    0%, 100% {
+      opacity: 0;
+    }
+  
+    5%, 60% {
+      opacity: 1;
+    }
+  }
+  
+.flash {
+  position: fixed;
+  top: 5.5rem;
+  left: 50%;
+  transform: translate(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 100%;
+  width: max-content;
+  animation: appear-then-fade 4s both;
+} %>
